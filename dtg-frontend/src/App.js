@@ -39,6 +39,27 @@ class App extends Component {
       })
     })
   }
+  getUserById = (id) => {
+    fetch(this.props.baseURL + '/gamers/' + id,  {
+      credentials: 'include'
+    })
+    .then(response => {
+      const user = this.state.gamers.find(gamer => gamer._id === id)
+      if (response.status === 200) {
+        console.log(response)
+        return user
+      } else {
+        return []
+      }
+      }) 
+    .then(data => {
+      console.log(data)
+      this.setState({
+        gamers: data
+      })
+    })
+  }
+
 
   addGamer = (newGamer) => {
     const copyGamers = [...this.state.gamers]
@@ -64,8 +85,10 @@ class App extends Component {
             <Route path="/login" exact component={() => <Login />} />
             <Route path="/addgamer" exact component={() => <NewUser baseURL={baseURL} addGamer={this.addGamer}/>} />
             <Route path="/gamers" exact component={() => <AllGamers gamers={this.state.gamers}/>} />
-            <Route path="/profile" exact component={() => <Profile profile={this.state.gamers}/>} />
+            <Route path="/profile/:id" exact component={() =>   <Profile profiles={this.state.gamers} /> }/>  
+         
           </Switch>
+          {/* <Profile profile={this.state.gamers} baseURL={baseURL} getUserById={this.getUserById}/>} /> */}
         </Router>
         <Footer />
       </React.Fragment>

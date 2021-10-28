@@ -2,32 +2,33 @@ import React, { Component } from 'react';
 import './App.css';
 import Comments from './Comments';
 import HeartButton from './HeartButton';
+import { useParams } from "react-router-dom";
 // import StarRating from './StarRating';
 
-export default class Profile extends Component {
-    constructor(props){
-        super(props)
-        this.state={
+export default function Profile(props) {
+   
+   
+      console.log(props)
+      
 
-        }
-    }
-    render(){
-      const results = this.props.profile;
-        // console.log(results)
-      if (results.length) {
+      
+      let { id } = useParams();
+      const profileData = props.profiles.find(profile => profile._id === id)
+      
+      if (profileData) {
         return(
             <React.Fragment>
               <HeartButton />
               {/* <StarRating /> */}
                 <h1>Profile Info</h1>
                   <img 
-                    src={results[1].profilePic} 
-                    alt={results[1].name} 
+                    
+                    src={profileData.profilePic} 
+                    alt={profileData.name} 
                     width='150px' /><br />
-                  Name: {results[1].name}<br />
-                  Age:{results[1].age}<br />
-                  Location: {results[1].location}<br />
-                  Fave Games:{results[1].faveGames}<br />
+                  
+                  Name: {profileData.name}<br />
+
                   <br />
               <Comments
                 commentsUrl="http://localhost:3000/comments"
@@ -40,4 +41,4 @@ export default class Profile extends Component {
           </React.Fragment>)
     }       
   }
-}
+

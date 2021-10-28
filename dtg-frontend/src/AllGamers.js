@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import SearchGamer from './SearchGamer';
+import Profile from './Profile';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 export default class AllGamers extends Component {
     constructor(props){
@@ -17,12 +19,17 @@ export default class AllGamers extends Component {
                     {gamerList.map((gamer, i) => {
                         return(
                             <div key={i} className='gamer'>
-                                <a href='http://localhost:3000/'><img src={gamer.profilePic} alt={gamer.name} width='150px'/></a>
-                                <p id='userinfo'>{gamer.name}</p>
+                                <a href={'http://localhost:3000/profile/'+gamer._id} ><img src={gamer.profilePic} alt={gamer.name} width='150px'/></a>
+
+                                {/* <Profile profile={gamer} />   */}
                             </div>
                             )
                         })
                     }
+                     
+                         
+                   
+                     
                 <SearchGamer />
                 </React.Fragment>
             )
