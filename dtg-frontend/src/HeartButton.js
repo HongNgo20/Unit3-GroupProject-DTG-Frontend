@@ -1,3 +1,4 @@
+import './profile.css';
 import React, { Component } from "react";
 
 export default class HeartButton extends Component {

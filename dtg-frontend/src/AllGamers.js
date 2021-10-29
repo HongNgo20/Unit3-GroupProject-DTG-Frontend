@@ -20,7 +20,8 @@ export default class AllGamers extends Component {
                         return(
                             <div key={i} className='gamer'>
                                 <a href={'http://localhost:3000/profile/'+gamer._id} ><img src={gamer.profilePic} alt={gamer.name} width='150px'/></a>
-
+                                <br/>
+                                {gamer.name}
                                 {/* <Profile profile={gamer} />   */}
                             </div>
                             )

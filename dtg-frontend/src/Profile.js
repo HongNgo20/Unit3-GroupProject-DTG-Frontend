@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './App.css';
+import './profile.css';
 import Comments from './Comments';
 import HeartButton from './HeartButton';
 import { useParams } from "react-router-dom";
@@ -17,28 +17,40 @@ export default function Profile(props) {
       
       if (profileData) {
         return(
-            <React.Fragment>
-              <HeartButton />
-              {/* <StarRating /> */}
+         <div className='container1'>       
                 <h1>Profile Info</h1>
+               <div className='avatar-flip'>
                   <img 
                     
                     src={profileData.profilePic} 
                     alt={profileData.name} 
-                    width='150px' /><br />
+                    height="150" width="150" /> 
+                    
+                  <img 
+                    
+                    src={profileData.profilePic} 
+                    alt={profileData.name} 
+                    height="150" width="150" /> 
+                    </div>
+                    <br />
                   
-                  Name: {profileData.name}<br />
-
-                  <br />
+                  <h2> {profileData.name} </h2>
+                  <h4>{profileData.age}</h4>
+                  <h4>{profileData.faveGames}</h4>
+                  <h4>{profileData.location}📍</h4>
+                  <HeartButton  />
+            
               <Comments
                 commentsUrl="http://localhost:3000/comments"
                 currentUserId="1" />
-            </React.Fragment>
+                </div>
+            
+         
           )
       } else {
         return(
           <React.Fragment>
+          
           </React.Fragment>)
     }       
   }
-
