@@ -78,9 +78,10 @@ class Login extends Component {
                     <div className='row align-items-center my-5'>
                         
                         <form onSubmit={this.props.loginUser}>
-
+                        <label for="fname">Username:</label> 
                             <input type ='text' id='username' name='username'/>
-                            <input type='text' id='name' name='name'/>
+                            {/* <input type='text' id='name' name='name'/> */}
+                            <label for="fname">Password:</label> 
                             <input type='password' id='password' name='password'/>
                             <input type='submit' value='login' />
                         </form>

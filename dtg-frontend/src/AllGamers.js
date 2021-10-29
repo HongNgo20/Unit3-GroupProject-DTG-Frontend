@@ -21,9 +21,9 @@ export default class AllGamers extends Component {
                     {gamerList.map((user, i) => {
                         return(
                             <div key={i} className='gamer'>
-                                <a href={'http://localhost:3000/profile/'+user._id} ><img src={user.profilePic} alt={user.name} width='150px'/></a>
+                                <a href={'http://localhost:3000/profile/'+user._id} ><img src={user.profilePic} alt={user.username} width='150px'/></a>
                                 <br/>
-                                {user.username}
+                                {user.name}
                                 {/* <Profile profile={gamer} />   */}
                             </div>
                             )

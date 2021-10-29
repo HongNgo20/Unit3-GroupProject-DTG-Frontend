@@ -39,8 +39,11 @@ class SignUp extends Component {
                 body: JSON.stringify({
                     username: e.target.username.value,
                     password: e.target.password.value,
-                    name: e.target.password.value,
-                    age: e.target.password.value
+                    name: e.target.name.value,
+                    age: e.target.password.value,
+                    location: e.target.location.value,
+                    faveGames: e.target.faveGames.value
+                    
                 }),
                 headers: {
                     'Content-Type': 'application/json'
@@ -75,6 +78,10 @@ class SignUp extends Component {
                             <input type ='text' id='name' name='name'/>
                             <label for="fname">Age:</label> 
                             <input type ='text' id='age' name='age'/>
+                            <label for="fname">Location:</label> 
+                            <input type ='text' id='location' name='location'/>
+                            <label for="fname">faveGames:</label> 
+                            <input type ='text' id='faveGames' name='faveGames'/>
 
                             <input type='submit'
                             value='signup' />        

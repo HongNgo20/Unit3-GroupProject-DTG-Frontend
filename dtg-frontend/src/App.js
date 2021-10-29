@@ -74,7 +74,6 @@ loginUser = async (e) => {
             this.setState({
                 username: e.target.username.value,
                 password: e.target.password.value,
-                name: e.target.name.value,
                 userLoggedIn: true
             })
             console.log(this.state)
@@ -149,7 +148,6 @@ getGamers = () => {
             <Route path="/signup" exact component={() => <SignUp />} />
             <Route path="/login" exact component={() => <Login loginUser={this.loginUser}/>} />
             <Route path="/logout" exact component={() => <Logout />} />
-            <Route path="/addgamer" exact component={() => <NewUser baseURL={baseURL} addGamer={this.addGamer}/>} />
             <Route path="/gamers" exact component={() => <AllGamers users={this.state.users}/>} />
             <Route path="/profile/:id" exact component={() =>   <Profile profiles={this.state.users} /> }/>  
          

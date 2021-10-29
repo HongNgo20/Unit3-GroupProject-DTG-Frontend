@@ -15,6 +15,7 @@ export default function Profile(props) {
       
       let { id } = useParams();
       const profileData = props.profiles.find(profile => profile._id === id)
+      console.log(profileData)
       
       if (profileData) {
         return(
@@ -35,8 +36,8 @@ export default function Profile(props) {
                     </div>
                     <br />
                   
-                  <h2> {profileData.username} </h2>
-                  <h4>{profileData.age}</h4>
+                  <h2> {profileData.name} </h2>
+                  <h4>Age:{profileData.age}</h4>
                   <h4>{profileData.faveGames}</h4>
                   <h4>{profileData.location}📍</h4>
                   <HeartButton  />
