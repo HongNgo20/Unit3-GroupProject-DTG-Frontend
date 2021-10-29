@@ -38,7 +38,9 @@ class SignUp extends Component {
                 method: 'POST', 
                 body: JSON.stringify({
                     username: e.target.username.value,
-                    password: e.target.password.value
+                    password: e.target.password.value,
+                    name: e.target.password.value,
+                    age: e.target.password.value
                 }),
                 headers: {
                     'Content-Type': 'application/json'
@@ -62,11 +64,17 @@ class SignUp extends Component {
                 <div className='container'>
                     <div className='row align-items-center my-5'>
                         
-                        <form onSubmit={this.signup}>
-                            
+                    <form onSubmit={this.signup}>
+                        <label for="fname">User:</label>
                             <input type='text' id='username' name='username'/>
-                            
+                            <label for="fname">Password:</label>    
                             <input type='password' id='password' name='password'/>
+                            {/* <label htmlFor='profilePic'>Avatar: &nbsp;</label>
+                            <input type='text' id='profilePic' name='profilePic' onChange={(event) => this.handleChange(event)}></input><br /> */}
+                            <label for="fname">Name:</label> 
+                            <input type ='text' id='name' name='name'/>
+                            <label for="fname">Age:</label> 
+                            <input type ='text' id='age' name='age'/>
 
                             <input type='submit'
                             value='signup' />        

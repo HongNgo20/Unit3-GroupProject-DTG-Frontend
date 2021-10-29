@@ -5,6 +5,7 @@ import HeartButton from './HeartButton';
 import { useParams } from "react-router-dom";
 // import StarRating from './StarRating';
 
+
 export default function Profile(props) {
    
    
@@ -23,18 +24,18 @@ export default function Profile(props) {
                   <img 
                     
                     src={profileData.profilePic} 
-                    alt={profileData.name} 
+                    alt={profileData.username} 
                     height="150" width="150" /> 
                     
                   <img 
                     
                     src={profileData.profilePic} 
-                    alt={profileData.name} 
+                    alt={profileData.username} 
                     height="150" width="150" /> 
                     </div>
                     <br />
                   
-                  <h2> {profileData.name} </h2>
+                  <h2> {profileData.username} </h2>
                   <h4>{profileData.age}</h4>
                   <h4>{profileData.faveGames}</h4>
                   <h4>{profileData.location}📍</h4>
